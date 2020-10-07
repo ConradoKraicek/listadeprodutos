@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="App.js"></script>
+    <script src="ProdutoController.js"></script>
+</head>
+<body ng-app="App">
+    <div ng-controller="ProdutoController">  
+        <h1 style="width: 15% !important; margin: 5%; margin-left: auto; margin-right: auto;">Lista de Produtos</h1>
+        <table style="border: 5px solid blue; width: 50% !important; margin: auto;" border="5">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+                <th>Total</th>
+                <th>Excluir</th>
+            </tr>
+            <tr ng-repeat="item in listaProduto track by $index">
+                <td>{{item.nome}}</td>
+                <td>{{item.quantidade}}</td>
+                <td>{{item.valor}}</td>
+                <td>{{item.valor * item.quantidade}}</td>
+                <td ng-click="removerListaProduto($index)">Excluir</td>
+            </tr>
+        </table>
+    
+    <br/>
+    <div style="margin: 5%; margin-left: 25%; margin-right: auto;">
+    Produto: <input type="text" ng-model="produto.nome">
+    Quantidade: <input type="text" ng-model="produto.quantidade">
+    Valor: <input type="text" ng-model="produto.valor">
+    <button ng-click="adicionarProduto(produto)">Cadastrar</button>
+    </div>
+    </div>  
+</body>
+</html>
