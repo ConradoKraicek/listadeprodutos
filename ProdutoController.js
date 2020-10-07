@@ -3,6 +3,8 @@ App.controller('ProdutoController',["$scope",function($scope){
     $scope.produto={};
 
     $scope.listaProduto=[];
+    
+    $scope.nomeProduto='Lista de Produtos';
 
     $scope.adicionarProduto=function(produto){
 
